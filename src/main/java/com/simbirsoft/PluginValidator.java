@@ -1,12 +1,10 @@
 package com.simbirsoft;
 
-import com.simbirsoft.annotations.GetIngredientMethodAnnotation;
 import com.simbirsoft.annotations.GetIngredientNameMethodAnnotation;
 import com.simbirsoft.annotations.PluginAnnotation;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
 public class PluginValidator {
 
     public Ingredient validate(Class<?> pluginClass) {
@@ -14,7 +12,7 @@ public class PluginValidator {
         String ingredientName = "";
         int ingredientCount = 0;
         try {
-            if (pluginClass.isAnnotationPresent(PluginAnnotation.class)) {
+            if (pluginClass.isAnnotationPresent(com.simbirsoft.annotations.PluginAnnotation.class)) {
                 Object plugin = pluginClass.newInstance();
 
                 PluginAnnotation pluginAnnotation = pluginClass.getAnnotation(PluginAnnotation.class);
@@ -27,7 +25,7 @@ public class PluginValidator {
                             ingredientName = (String) method.invoke(plugin);
                         }
                     }
-                    if (method.isAnnotationPresent(GetIngredientMethodAnnotation.class)) {
+                    if (method.isAnnotationPresent(com.simbirsoft.annotations.GetIngredientMethodAnnotation.class)) {
                         Class[] methodParameters = method.getParameterTypes();
                         if (methodParameters.length == 0) {
                             ingredientCount = (int) method.invoke(plugin);
