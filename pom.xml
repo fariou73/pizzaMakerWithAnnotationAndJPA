@@ -2,57 +2,59 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>Simbirsoft</groupId>
-  <artifactId>pizzaMaker</artifactId>
-  <version>0.1-SNAPSHOT</version>
+  <groupId>com.simbirsoft</groupId>
+  <artifactId>com.simbirsoft.pizzaMakerWithAnnotationAndJPA</artifactId>
+  <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>pizzaMaker</name>
+  <name>com.simbirsoft.pizzaMakerWithAnnotationAndJPA</name>
   <url>http://maven.apache.org</url>
-
-    <repositories>
-        <repository>
-            <id>PluginAnnotation</id>
-            <url>https://github.com/fariou73/PluginAnnotation/tree/mvn-repo</url>
-        </repository>
-    </repositories>
-
-
-  <build>
-      <plugins>
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-compiler-plugin</artifactId>
-              <configuration>
-                  <source>1.8</source>
-                  <target>1.8</target>
-              </configuration>
-          </plugin>
-      </plugins>
-  </build>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.simbirsoft</groupId>
-            <artifactId>com.simbirsoft.plugin</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <!-- hibernate -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>4.1.4.Final</version>
-        </dependency>
+    <repositories>
+        <repository>
+            <id>PluginAnnotation</id>
+            <url>
+                https://github.com/fariou73/PluginAnnotation/tree/mvn-repo
+            </url>
+        </repository>
+    </repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-        <!-- SQLite JDBC library -->
-        <dependency>
-            <groupId>org.xerial</groupId>
-            <artifactId>sqlite-jdbc</artifactId>
-            <version>3.7.2</version>
-        </dependency>
-    </dependencies>
+  <dependencies>
+      <dependency>
+          <groupId>com.simbirsoft</groupId>
+          <artifactId>com.simbirsoft.plugin</artifactId>
+          <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>5.1.25</version>
+      </dependency>
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-entitymanager</artifactId>
+          <version>4.3.8.Final</version>
+      </dependency>
+      <dependency>
+          <groupId>org.hibernate.javax.persistence</groupId>
+          <artifactId>hibernate-jpa-2.0-api</artifactId>
+          <version>1.0.1.Final</version>
+      </dependency>
+  </dependencies>
 </project>

@@ -1,4 +1,4 @@
-package simbirsoft;
+package com.simbirsoft;
 
 import java.util.ArrayList;
 import java.util.Arrays;

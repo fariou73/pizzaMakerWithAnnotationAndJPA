@@ -1,4 +1,4 @@
-package simbirsoft;
+package com.simbirsoft;
 
 import com.simbirsoft.annotations.GetIngredientMethodAnnotation;
 import com.simbirsoft.annotations.GetIngredientNameMethodAnnotation;

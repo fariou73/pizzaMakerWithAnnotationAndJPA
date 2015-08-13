@@ -1,4 +1,4 @@
-package simbirsoft;
+package com.simbirsoft;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -19,11 +19,11 @@ public class Ingredients implements Iterable<Ingredient> {
     }
 
     public void saveFromFile() {
-        new HibernateHelper().addIngredient(ingredientsList);
+       new HibernateHelper().addIngredient(ingredientsList);
     }
 
     public void loadFromFile() {
-        ingredientsList.addAll(new HibernateHelper().getAll());
+       ingredientsList.addAll(new HibernateHelper().getAll());
     }
 
     public boolean isDifferenceReal(Ingredients ingredients) {

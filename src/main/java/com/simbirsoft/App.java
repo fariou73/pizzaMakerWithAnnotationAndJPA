@@ -1,27 +1,24 @@
-package simbirsoft;
+package com.simbirsoft;
+
 
 import java.io.File;
 import java.util.List;
 
-public class Main {
+public class App {
     private static volatile PizzaQueue pizzaQueue = new PizzaQueue();
     private static volatile Ingredients realPizzaIngredients = new Ingredients();
-    private static final String PATH_FROM_FILE = "src/main/resources/db_dump.db3";
     private static final int COUNT_OF_CUSTOMERS = 10;
 
+
     public static void main(String[] args) {
-        if ((new File(PATH_FROM_FILE)).exists()) {
-            realPizzaIngredients.loadFromFile();
-            PluginJarLoader pluginJarLoader = new PluginJarLoader(realPizzaIngredients);
-            startWorkWithPizza();
-        } else {
-            System.out.println("File With ingredients not found.");
-        }
+        realPizzaIngredients.loadFromFile();
+        PluginJarLoader pluginJarLoader = new PluginJarLoader(realPizzaIngredients);
+        startWorkWithPizza();
     }
 
 
     private static void startWorkWithPizza() {
-        for (int i = 0; i<5; i++){
+        for (int i = 0; i < 5; i++) {
             Ingredients pizzaIngredients = new Ingredients();
             PizzaSize pizzaSize = new PizzaSize();
             List<String> pizzaSizes = pizzaSize.SIZES_OF_PIZZA;

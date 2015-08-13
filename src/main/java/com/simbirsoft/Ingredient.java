@@ -1,10 +1,10 @@
-package simbirsoft;
-
-//import org.hibernate.annotations.*;
+package com.simbirsoft;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 
 @Entity
+@NamedQuery(name = "Ingredient.getAll", query = "from Ingredient")
 @Table(name = "Ingredient")
 public class Ingredient {
     @Id

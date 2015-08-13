@@ -1,4 +1,4 @@
-package simbirsoft;
+package com.simbirsoft;
 
 import java.io.IOException;
 import java.net.URL;

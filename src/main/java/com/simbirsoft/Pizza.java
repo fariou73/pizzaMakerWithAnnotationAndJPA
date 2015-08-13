@@ -1,4 +1,4 @@
-package simbirsoft;
+package com.simbirsoft;
 
 public class Pizza {
     private final PizzaSize currentPizzaSize;
