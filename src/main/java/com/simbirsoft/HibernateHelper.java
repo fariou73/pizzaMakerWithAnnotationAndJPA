@@ -8,7 +8,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 public class HibernateHelper {
-    private static final EntityManager ENTITY_MANAGER = Persistence.createEntityManagerFactory("COLIBRI").createEntityManager();
+    private static final EntityManager ENTITY_MANAGER = Persistence.createEntityManagerFactory("testjpa").createEntityManager();
 
 
     public void addIngredient(List<Ingredient> ingredientList) {

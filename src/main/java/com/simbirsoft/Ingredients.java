@@ -9,7 +9,6 @@ public class Ingredients implements Iterable<Ingredient> {
 
     private final List<Ingredient> ingredientsList = new ArrayList<Ingredient>();
 
-
     public Iterator<Ingredient> iterator() {
         return ingredientsList.iterator();
     }
@@ -59,7 +58,15 @@ public class Ingredients implements Iterable<Ingredient> {
     }
 
     public void add(Ingredient ingredient) {
-        ingredientsList.add(ingredient);
+        boolean contains = true;
+        for (Ingredient iteratIngredient : ingredientsList){
+            if (iteratIngredient.getIngredientsName()==ingredient.getIngredientsName()){
+                contains = false;
+            }
+        }
+        if (contains){
+            ingredientsList.add(ingredient);
+        }
     }
 
     public void clear() {

@@ -1,7 +1,5 @@
 package com.simbirsoft;
 
-
-import java.io.File;
 import java.util.List;
 
 public class App {

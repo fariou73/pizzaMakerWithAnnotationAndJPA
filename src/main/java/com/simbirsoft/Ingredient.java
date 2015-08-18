@@ -4,16 +4,13 @@ import javax.persistence.*;
 import javax.persistence.Entity;
 
 @Entity
-@NamedQuery(name = "Ingredient.getAll", query = "from Ingredient")
+@NamedQuery(name = "Ingredient.getAll", query = "SELECT  c from Ingredient c")
 @Table(name = "Ingredient")
 public class Ingredient {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    @Column(name = "name", length = 128)
+    private long id;
     private final String ingredientsName;
-    @Column(name = "count")
     private Integer ingredientCount;
 
     public Ingredient(){
